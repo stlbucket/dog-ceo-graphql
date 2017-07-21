@@ -20,7 +20,11 @@ Point your browser at: <a href="http://localhost:4000/graphql">http://localhost:
 query {
   allBreeds {
    name
-    randomImage
+   randomImage
+   allSubBreeds {
+     name
+     randomImage
+   }
   }
 }
 ```
@@ -28,9 +32,13 @@ query {
 
 ```$xslt
 query {
-  breed (name: "akita") {
+  breed (name: "hound") {
    name
     randomImage
-  }
+    subBreed(name: "Ibizan") {
+      name,
+      allImages
+    }
+ }
 }
 ```
